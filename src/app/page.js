@@ -5,13 +5,15 @@ const API_KEY = process.env.API_KEY;
 
 export default async function Home({searchParams}) {
   const genre = searchParams.genre || "fetchTrending";
+  {/* For Loading */}
+  await new Promise ((resolve) => {setTimeout(() => {resolve()}, 2000)}) ;
 
-
+  {/* For Fetch */}
   const res = await fetch(
     `https://api.themoviedb.org/3/${
       genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
     }?api_key=${API_KEY}&language=en-US&page=1`,
-    { next: { revalidate: 15 } }
+    
   );
 
   if (!res.ok) {
@@ -21,7 +23,7 @@ export default async function Home({searchParams}) {
   const data =await res.json();
   const results = data.results;
 
-  console.log(results);
+  // console.log(results);
 
   // const res2 = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=en-US?api_key=${API_KEY}`);
 
