@@ -18,7 +18,7 @@ export default function Card({ result }) {
         height: "auto",
       }}
       placeholder="blur"
-      blurDataURL="/spinner.svg"
+      blurDataURL="/ripples2.svg"
       alt="image is not available"
     ></Image>
     <div className="p-2">

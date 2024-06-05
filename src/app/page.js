@@ -6,7 +6,7 @@ const API_KEY = process.env.API_KEY;
 export default async function Home({searchParams}) {
   const genre = searchParams.genre || "fetchTrending";
   {/* For Loading */}
-  await new Promise ((resolve) => {setTimeout(() => {resolve()}, 2000)}) ;
+  // await new Promise ((resolve) => {setTimeout(() => {resolve()}, 2000)}) ;
 
   {/* For Fetch */}
   const res = await fetch(

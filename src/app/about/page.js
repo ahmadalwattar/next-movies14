@@ -1,5 +1,5 @@
 export default async function About () {
-  await new Promise ((resolve) => {setTimeout(() => {resolve()}, 2000)}) ;
+  // await new Promise ((resolve) => {setTimeout(() => {resolve()}, 2000)}) ;
   return (
     <div className="max-w-6xl mx-auto space-y-4 p-4">
       <h1 className="text-2xl font-medium text-blue-300">About</h1>

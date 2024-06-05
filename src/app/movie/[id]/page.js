@@ -28,7 +28,7 @@ const movie = await getMovie(movieId);
             height: "100%",
           }}
           placeholder="blur"
-          blurDataURL="/spinner.svg"
+          blurDataURL="/ripples2.svg"
           alt="Movie poster"
         ></Image>
         <div className="p-2">
