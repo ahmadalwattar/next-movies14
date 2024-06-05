@@ -13,6 +13,7 @@ export default async function Home({searchParams}) {
     `https://api.themoviedb.org/3/${
       genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
     }?api_key=${API_KEY}&language=en-US&page=1`,
+    { next: { revalidate: 1000 }}
     
   );
 
@@ -23,7 +24,7 @@ export default async function Home({searchParams}) {
   const data =await res.json();
   const results = data.results;
 
-  // console.log(results);
+  console.log(results);
 
   // const res2 = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=en-US?api_key=${API_KEY}`);
 
